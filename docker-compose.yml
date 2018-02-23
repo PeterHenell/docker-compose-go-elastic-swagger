@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+# elasticsearch:
+#  image: elasticsearch:alpine
+#  environment:
+#   - cluster.name=docker-cluster
+#   - bootstrap.memory_lock=true
+#   - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#  ulimits:
+#   memlock:
+#    soft: -1
+#    hard: -1
+#  ports:
+#   - "9200:9200"
+#   - "9300:9300"
+
+ api:
+   build:
+     context: ./api
+     args:
+       app_env: ${APP_ENV}
+   ports:
+     - "8080:8080"
+#  links:
+#    - elasticsearch:elasticsearch
+   depends_on:
+#    - elasticsearch
+     - swagger
+   volumes:
+     - ./api:/go/src/github.com/myapp/api
+
+ swagger:
+   image: quay.io/goswagger/swagger
+   command: generate server -f /local/petstore.yaml -t /go/src/api -A myapp
+   volumes:
+     - ./api:/go/src/api
+     - ./swagger-spec:/local
+
+
+#volumes:
+#  shared:
+
