@@ -3,6 +3,7 @@ FROM golang
 # Big thanks to https://github.com/McMenemy/GoDoRP
 # Most of this file is use as found, modified only to fit the current use case
 
+
 # if left blank app will run with dev settings
 # to build production image run:
 # $ docker build ./api --build-args app_env=production
