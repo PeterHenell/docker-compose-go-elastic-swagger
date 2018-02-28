@@ -17,7 +17,7 @@ import (
 	"api/restapi/operations/user"
 )
 
-//go:generate swagger generate server --target ../src/api --name myapp --spec ../../local/petstore.yaml
+//go:generate swagger generate server --target .. --name myapp --spec ../../../../local/petstore.yaml
 
 func configureFlags(api *operations.MyappAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
