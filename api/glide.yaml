@@ -1,12 +1,13 @@
-package: github.com/docker-compose-go-elastic-swagger/api
+package: github.com/PeterHenell/docker-compose-go-elastic-swagger/api
 import:
-- package: api/models
-- package: api/restapi
+- package: github.com/PeterHenell/docker-compose-go-elastic-swagger
   subpackages:
-  - operations
-  - operations/pet
-  - operations/store
-  - operations/user
+  - generated/models
+  - generated/restapi
+  - generated/restapi/operations
+  - generated/restapi/operations/pet
+  - generated/restapi/operations/store
+  - generated/restapi/operations/user
 - package: github.com/go-openapi/errors
 - package: github.com/go-openapi/loads
 - package: github.com/go-openapi/runtime

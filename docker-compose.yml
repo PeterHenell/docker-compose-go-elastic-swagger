@@ -28,14 +28,14 @@ services:
 #    - elasticsearch
      - swagger
    volumes:
-     - ./api:/go/src/github.com/docker-compose-go-elastic-swagger/api
+     - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger/api
 
  swagger:
    image: quay.io/goswagger/swagger
-   working_dir: /go/src/api
-   command: generate server -f /local/petstore.yaml -A myapp
+   working_dir: /go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
+   command: generate server -f /local/petstore.yaml -A myapp -t generated
    volumes:
-     - ./api:/go/src/api
+     - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
      - ./swagger-spec:/local
 
 
