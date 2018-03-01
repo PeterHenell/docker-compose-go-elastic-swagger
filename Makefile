@@ -10,8 +10,7 @@ swagger-server: swagger-clean
 	sudo chgrp -R ${USER} api/generated
 
 swagger-clean:
-	cd api/generated/restapi && find . ! -name 'main.go' -type f -exec rm -f {} +
-	rm -rf generated/cmd generated/models generated/restapi/operations
+	rm -rf api/generated/models api/generated/restapi
 
 docker-nuke:
 	docker ps -a -q | xargs docker stop
