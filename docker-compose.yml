@@ -28,7 +28,7 @@ services:
 #    - elasticsearch
      - swagger
    volumes:
-     - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger/api
+     - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
 
  swagger:
    image: quay.io/goswagger/swagger
