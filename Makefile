@@ -1,5 +1,5 @@
 swagger-server: swagger-clean
-	docker-compose up swagger
+	docker-compose up swagger-server
 	sudo chown -R ${USER} api/generated
 	sudo chgrp -R ${USER} api/generated
 
@@ -21,3 +21,6 @@ swagger-client:
 
 web-up: swagger-client
 	docker-compose up web
+
+up: swagger-client swagger-server
+	docker-compose up
