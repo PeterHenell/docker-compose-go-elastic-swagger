@@ -41,16 +41,16 @@ services:
    build: ./web/docker/swagger-client
    command: java -jar /swagger-codegen-cli.jar generate -l typescript-angular2 -i /local/petstore.yaml -o /output
    volumes:
-     - ./web/app/service:/output
+     - ./web/app/client:/output
      - ./swagger-spec:/local
  web:
    build: ./web/docker/app
-   command: npm install && np serve
+   command: serve
    ports:
     - "8000:8000"
-   working_dir: /home/node
+   working_dir: /node
    volumes:
-     - ./web/app:/home/node
+     - ./web/app:/node
 
 #volumes:
 #  shared:

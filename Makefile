@@ -16,8 +16,8 @@ server-up: swagger-server
 
 swagger-client:
 	docker-compose up swagger-client
-	sudo chown -R ${USER} web/generated
-	sudo chgrp -R ${USER} web/generated
+	sudo chown -R ${USER} web/app/client
+	sudo chgrp -R ${USER} web/app/client
 
 web-up: swagger-client
 	docker-compose up web
