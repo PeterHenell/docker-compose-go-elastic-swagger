@@ -1,9 +1,3 @@
-glide-install: glide-clean
-	glide install
-
-glide-clean:
-	rm -rf vendor
-
 swagger-server: swagger-clean
 	docker-compose up swagger
 	sudo chown -R ${USER} api/generated
@@ -19,3 +13,11 @@ docker-nuke:
 
 server-up: swagger-server
 	docker-compose up api
+
+swagger-client:
+	docker-compose up swagger-client
+	sudo chown -R ${USER} web/generated
+	sudo chgrp -R ${USER} web/generated
+
+web-up: swagger-client
+	docker-compose up web

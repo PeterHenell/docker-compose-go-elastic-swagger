@@ -24,13 +24,12 @@ services:
      - "8080:8080"
 #  links:
 #    - elasticsearch:elasticsearch
-   depends_on:
+#   depends_on:
 #    - elasticsearch
-     - swagger
    volumes:
      - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
 
- swagger:
+ swagger-server:
    image: quay.io/goswagger/swagger
    working_dir: /go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
    command: generate server -f /local/petstore.yaml -A myapp -t generated
@@ -38,6 +37,20 @@ services:
      - ./api:/go/src/github.com/PeterHenell/docker-compose-go-elastic-swagger
      - ./swagger-spec:/local
 
+ swagger-client:
+   build: ./web/docker/swagger-client
+   command: java -jar /swagger-codegen-cli.jar generate -l typescript-angular2 -i /local/petstore.yaml -o /output
+   volumes:
+     - ./web/app/service:/output
+     - ./swagger-spec:/local
+ web:
+   build: ./web/docker/app
+   command: npm install && np serve
+   ports:
+    - "8000:8000"
+   working_dir: /home/node
+   volumes:
+     - ./web/app:/home/node
 
 #volumes:
 #  shared:
