@@ -1,8 +1,6 @@
-swagger-server: swagger-clean
+swagger-server:
 	docker-compose up swagger-server
-#	sudo chown -R ${USER}:${USER} api/generated
 	sudo chown -R ${USER}:${USER} api
-
 
 swagger-clean:
 	sudo rm -rf api/generated/models api/generated/restapi
