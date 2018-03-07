@@ -1,10 +1,11 @@
 swagger-server: swagger-clean
 	docker-compose up swagger-server
-	sudo chown -R ${USER} api/generated
-	sudo chgrp -R ${USER} api/generated
+#	sudo chown -R ${USER}:${USER} api/generated
+	sudo chown -R ${USER}:${USER} api
+
 
 swagger-clean:
-	rm -rf api/generated/models api/generated/restapi
+	sudo rm -rf api/generated/models api/generated/restapi
 
 docker-nuke:
 	docker ps -a -q | xargs docker stop
@@ -16,8 +17,7 @@ server-up: swagger-server
 
 swagger-client:
 	docker-compose up swagger-client
-	sudo chown -R ${USER} web/app/client
-	sudo chgrp -R ${USER} web/app/client
+	sudo chown -R ${USER}:${USER} web/app/client
 
 web-up: swagger-client
 	docker-compose up web

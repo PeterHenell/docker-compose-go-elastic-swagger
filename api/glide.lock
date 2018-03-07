@@ -1,5 +1,5 @@
 hash: c9cf04c3db7d0a240fa1c307b3ee86a7add717e4c7fff893a9963f28bb25212f
-updated: 2018-03-02T10:58:34.70700819Z
+updated: 2018-03-07T11:43:40.184069516Z
 imports:
 - name: github.com/asaskevich/govalidator
   version: 4b3d68f87f176641ffc147420296013aff66ea32
@@ -26,11 +26,11 @@ imports:
   - middleware/untyped
   - security
 - name: github.com/go-openapi/spec
-  version: 1de3e0542de65ad8d75452a595886fdd0befb363
+  version: d8000b5bfbd1147255710505a27c735b6b2ae2ac
 - name: github.com/go-openapi/strfmt
   version: 6d1a47fad79c81e8cd732889cb80e91123951860
 - name: github.com/go-openapi/swag
-  version: 0d03ad0b6405ada874d59d97c416b5cf4234e154
+  version: ceb469cb0fdf2d792f28d771bc05da6c606f55e5
 - name: github.com/go-openapi/validate
   version: 180bba53b98899f743a112e568bed9e2ef31aa20
 - name: github.com/jessevdk/go-flags
@@ -44,7 +44,7 @@ imports:
 - name: github.com/mitchellh/mapstructure
   version: 00c29f56e2386353d58c599509e8dc3801b0d716
 - name: github.com/PeterHenell/docker-compose-go-elastic-swagger
-  version: 67c2bc45fafd9e067006ecd941bd836a2a97e0ae
+  version: 6cb449cfb90f87f20f6b9681f1c0e1fbbf8c3aca
   subpackages:
   - generated/models
   - generated/restapi
@@ -59,12 +59,12 @@ imports:
 - name: github.com/tylerb/graceful
   version: d72b0151351a13d0421b763b88f791469c4f5dc7
 - name: golang.org/x/net
-  version: 22ae77b79946ea320088417e4d50825671d82d57
+  version: d25186b37f34ebdbbea8f488ef055638dfab272d
   subpackages:
   - context
   - idna
 - name: golang.org/x/text
-  version: 0b0b1f509072617b86d90971b51da23cc52694f2
+  version: b7ef84aaf62aa3e70962625c80a571ae7c17cb40
   subpackages:
   - secure/bidirule
   - transform
