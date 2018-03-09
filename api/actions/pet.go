@@ -3,13 +3,17 @@ package actions
 import (
 	"github.com/PeterHenell/docker-compose-go-elastic-swagger/api/generated/restapi/operations/pet"
 	"github.com/go-openapi/runtime/middleware"
+	"github.com/PeterHenell/docker-compose-go-elastic-swagger/api/generated/models"
+	"github.com/PeterHenell/docker-compose-go-elastic-swagger/api/generated/restapi/operations"
 )
 
 var AddPetHandler pet.AddPetHandlerFunc = func(params pet.AddPetParams, principal interface{}) middleware.Responder {
-	return middleware.NotImplemented("operation pet.AddPet has not yet been implemented")
+	// oops, the spec did not contain any respones wich were possitive. The only specified responce is 405
+	return pet.NewAddPetMethodNotAllowed()
 }
 
 var DeletePetHandler pet.DeletePetHandlerFunc = func(params pet.DeletePetParams, principal interface{}) middleware.Responder {
+	return operations.
 	return middleware.NotImplemented("operation pet.DeletePet has not yet been implemented")
 }
 
